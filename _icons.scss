@@ -1,0 +1,295 @@
+// ICONS
+
+
+%icon-default {
+    display: block;
+    position: relative;
+    border-color: $base7;
+    @include transition (border-color 0.25s ease-in-out);
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        border-color: $base7;
+        @include transition (border-color 0.25s ease-in-out);
+    }
+    &:hover,
+    &:hover:before,
+    &:hover:after {
+        border-color: $base2;
+        cursor: pointer;
+    }
+}
+
+
+%icon-arrow {
+    display: block;
+    position: relative;
+    border-top: 1px solid $base7;
+    border-right: 1px solid $base7;
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    @include transform(rotate(45deg));
+    @include transform-origin(center center);
+    @include transition (border-color 0.25s ease-in-out);
+    &:after {
+        content: "";
+        border-top: 1px solid $base7;
+        width: 133%;
+        height: 0;
+        position: absolute;
+        top: -1px;
+        right: 0;
+        @include transform(rotate(-45deg));
+        @include transform-origin(right top);
+        @include transition (border-color 0.25s ease-in-out);
+    }
+    &:hover,
+    &:hover:after {
+        border-color: $base2;
+        cursor: pointer;
+    }
+}
+
+.arrow-right {
+    @extend %icon-arrow;
+}
+.arrow-left {
+    @extend %icon-arrow;
+    @include transform(rotate(-135deg));
+}
+.arrow-up {
+    @extend %icon-arrow;
+    @include transform(rotate(-45deg));
+}
+.arrow-down {
+    @extend %icon-arrow;
+    @include transform(rotate(135deg));
+}
+
+
+
+.link-external {
+    @extend %icon-arrow;
+    @include transform(rotate(0deg));
+    width: 20px;
+    height: 20px;
+    top: 8px;
+    &:before {
+        content: "";
+        border-top: 1px solid $base9;
+        border-right: 1px solid $base9;
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 20px;
+        height: 20px;
+        @include transition (border-color 0.25s ease-in-out);
+    }
+    &:hover:before {
+        border-color: $base5;
+    }
+    span  {
+        top: -8px;
+    }
+}
+
+.link-share {
+    @extend %icon-arrow;
+    @include transform(rotate(0deg));
+    width: 20px;
+    height: 20px;
+    &:before {
+        content: "";
+        border-bottom: 1px solid $base9;
+        border-left: 1px solid $base9;
+        position: absolute;
+        bottom: -8px;
+        left: -8px;
+        width: 20px;
+        height: 20px;
+        @include transition (border-color 0.25s ease-in-out);
+    }
+    &:hover:before {
+        border-color: $base5;
+    }
+}
+
+.link-note {
+    display: block;
+    position: relative;
+    border: 1px solid $base7;
+    background: transparent;
+    width: 24px;
+    height: 32px;    
+    @include transition (border-color 0.25s ease-in-out);
+    &:before,
+    &:after {
+        content: "";
+        border-top: 1px solid $base7;
+        width: 60%;
+        height: 0;
+        position: absolute;
+        left: 20%;
+        @include transition (border-color 0.25s ease-in-out);
+    }
+    &:before {
+        top: 10px;
+    }
+    &:after {
+        top: 16px;
+    }
+    &:hover,
+    &:hover:before,
+    &:hover:after {
+        border-color: $base2;
+        cursor: pointer;
+    }
+}
+
+.link-comment {
+    display: block;
+	position: relative;
+	border: 1px solid $base7;
+    background: transparent;
+    width: 32px;
+    height: 22px;    
+    @include transition (border-color 0.25s ease-in-out);
+	&:before,
+	&:after {
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		left: 15px;
+		top: 100%;
+        @include transition (border-color 0.25s ease-in-out);
+	}
+	&:before {
+		border-color: rgba(204, 204, 204, 0);
+		border-top-color: $base6;
+		border-width: 6px;
+		margin-left: -6px;
+	}  
+	&:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-top-color: $base0;
+		border-width: 5px;
+		margin-left: -5px;
+	}
+	&:hover  {
+    	border-color: $base2;
+	}
+	&:hover:before {
+    	border-top-color: $base1;
+	}
+}
+
+.link-external,
+.link-note,
+.link-comment,
+.link-share {
+    span {
+        white-space: nowrap;
+        position: absolute;
+        left: 40px;
+        color: $base8;
+        text-transform: lowercase;
+        @include transition (color 0.25s ease-in-out);
+    }
+    &:hover span {
+        color: $base2;
+    }
+}
+.link-share span {
+    left: 32px;
+}
+
+
+.skip-right,
+.skip-left {
+    display: block;
+    position: relative;
+    border-top: 1px solid $base7;
+    border-right: 1px solid $base7;
+    background: transparent;
+    width: 14px;
+    height: 14px;
+    margin: 8px 0;
+    @include transform(rotate(45deg));
+    @include transform-origin(center center);
+    @include transition (border-color 0.25s ease-in-out);
+    &:before, 
+    &:after {
+        content: "";
+        border-top: 1px solid $base7;
+        width: 100%;
+        height: 0;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        @include transition (border-color 0.25s ease-in-out);
+    }
+    &:before { 
+        @include transform(rotate(0deg));
+        @include transform-origin(right top);
+    }
+    &:after { 
+        @include transform(rotate(-90deg));
+        @include transform-origin(right bottom);
+    }
+    &:hover,
+    &:hover:before,
+    &:hover:after {
+        border-color: $base2;
+        cursor: pointer;
+    }
+}
+
+.skip-left {
+    @include transform(rotate(-135deg));
+}
+
+
+.icon-heart { 
+    display: block;
+    position: relative;
+	height: 24px;
+	width: 24px;
+	@include transform(rotate(45deg));
+	border-bottom: 1px solid $base7;
+	border-right: 1px solid $base7;
+    &:before, 
+    &:after {
+    	position: absolute;
+        content: "";
+    	width: 24px;
+    	height: 12px;
+    	border: 1px solid $base7;
+    	border-bottom: 0;
+    	border-radius: 24px 24px 0 0;
+    }
+    &:before {
+    	left: 1px;
+    	top: 12px;
+        @include transform(rotate(-90deg));
+        @include transform-origin(0 100%);    
+    }
+    &:after {
+    	left: 0; 
+    	top: -11px;
+        @include transform(rotate(0deg));
+        @include transform-origin(100% 100%);
+    }
+    &:hover,
+    &:hover:before,
+    &:hover:after {
+        border-color: $base2;
+        cursor: pointer;
+    }
+}
+

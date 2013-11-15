@@ -1,0 +1,131 @@
+// STARTER VARIABLES AND MIXINS
+
+
+// COLORS
+
+$highlight: #fdf394;
+$highlight-dark: #fee766;
+
+$anchor: #00BFFF;
+$anchor-dark: #0086e5;
+
+$loud: #FF4E00;
+$loud-dark: saturate(darken($loud, 15), 4);
+
+$alt: #b6f2f2;
+$alt-dark: darken($alt, 15);
+
+
+
+
+$base: #000;
+$base1: lighten($base, 10%);
+$base2: lighten($base, 20%);
+$base3: lighten($base, 30%);
+$base4: lighten($base, 40%);
+$base5: lighten($base, 50%);
+$base6: lighten($base, 60%);
+$base7: lighten($base, 70%);
+$base8: lighten($base, 80%);
+$base9: lighten($base, 90%);
+$base0: lighten($base, 100%);
+
+$bg:    lighten($base, 95%);
+
+
+// LAYERS
+
+$layer1: 1; // content
+$layer2: 2; // hovers
+$layer3: 3; // cloak
+$layer4: 4; // lightbox
+$layer5: 5; // lightbox content
+
+
+// SPACING
+
+$padding: 30px;
+
+
+// GRID (BOURBON NEAT) //
+
+$grid-columns: 16;
+
+
+// RWD BREAKPOINTS 
+
+@mixin breakpoint($point) {
+	@if $point == papa {
+ 		@media (max-width: 1020px) { @content; }
+	}
+	@if $point == mama {
+		@media (max-width: 974px) { @content; }
+	}
+	@else if $point == baby {
+		@media (max-width: 480px)  { @content; }
+	}
+}
+
+
+
+// MIXINS -- check Bourbon before adding new ones
+
+
+// cross-browser inline-block -- bit.ly/KuaPpr 
+%inline-block {
+	display: -moz-inline-stack; 
+	display: inline-block;
+	zoom: 1;
+	*display: inline;		
+}	
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+
+// STATES
+
+.is-hidden {
+	display: none;
+}
+
+.fullwidth { 
+	width: 100%; 
+}
+
+
+
+// STANDARD ELEMENTS
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+	
+hr {
+	border: 0;
+	height: 1px;
+	background: $base8;
+	margin:2rem 0 4rem 0;
+}
+
+
+img, video, object { 
+  max-width: 100% 
+}
